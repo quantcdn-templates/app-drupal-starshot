@@ -1,0 +1,21 @@
+services:
+  app:
+    restart: unless-stopped
+    build:
+      context: .
+    depends_on:
+      - mariadb
+      - redis
+    volumes:
+      - ./src/web/sites/default/files:/opt/drupal/web/sites/default/files
+
+  mariadb:
+    restart: unless-stopped
+    image: mariadb:latest
+    volumes:
+      - ./db:/var/lib/mysql
+
+  redis:
+    restart: unless-stopped
+    image: redis
+    command: ["redis-server", "--appendonly", "no", "--maxmemory", "200mb", "--maxmemory-policy", "allkeys-lru"]
