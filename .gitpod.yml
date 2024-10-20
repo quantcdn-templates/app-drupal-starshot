@@ -1,4 +1,4 @@
-image: drupalpod/drupalpod-gitpod-base:20240614
+image: drupalpod/drupalpod-gitpod-base:20240905
 
 tasks:
   - init: |
