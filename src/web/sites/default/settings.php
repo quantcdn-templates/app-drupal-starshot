@@ -923,18 +923,6 @@ catch (\Exception $e) {
   $settings['container_yamls'][] = "sites/default/redis-unavailable.services.yml";
   $settings['cache']['default'] = 'cache.backend.null';
 }
-$databases['default']['default'] = array (
-  'database' => 'drupal',
-  'username' => 'drupal',
-  'password' => 'drupal',
-  'prefix' => '',
-  'host' => 'mariadb',
-  'port' => 3306,
-  'isolation_level' => 'READ COMMITTED',
-  'driver' => 'mysql',
-  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
-);
 $settings['hash_salt'] = '6JyJvsgQxzqHCA9YCOScZZXOGfyTSRHXFFYvQIThQpPR_ot6c_exFdOI7r7BAi2t2Fu8phVevw';
 
 // Automatically generated include for settings managed by ddev.
